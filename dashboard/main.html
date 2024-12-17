@@ -1,0 +1,512 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Niqah Dashboard
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .sidebar {
+            background-color: #5A2D0C;
+            color: white;
+            width: 250px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sidebar img {
+            width: 50px;
+            margin-bottom: 20px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .sidebar a i {
+            margin-right: 10px;
+        }
+        .sidebar .sign-out {
+            display: flex;
+            align-items: center;
+        }
+        .main-content {
+            flex: 1;
+            background-color: #F5F5F5;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .header .package-info {
+            text-align: right;
+        }
+        .header .package-info p {
+            margin: 0;
+        }
+        .header .package-info a {
+            color: #D2691E;
+            text-decoration: none;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .stats .stat {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1;
+            margin-right: 10px;
+        }
+        .stats .stat:last-child {
+            margin-right: 0;
+        }
+        .stats .stat h2 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .stats .stat p {
+            margin: 0;
+            font-weight: 600;
+        }
+        .guest-list {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .guest-list h2 {
+            margin: 0 0 20px 0;
+        }
+        .guest-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .guest-list table th, .guest-list table td {
+            padding: 10px;
+            text-align: left;
+        }
+        .guest-list table th {
+            background-color: #F5F5F5;
+        }
+        .guest-list table tr:nth-child(even) {
+            background-color: #F5F5F5;
+        }
+        .guest-list .actions {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .guest-list .actions button {
+            background-color: #5A2D0C;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .guest-list .actions button i {
+            margin-right: 10px;
+        }
+        .greetings-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .greetings-section h2 {
+            margin: 0 0 20px 0;
+        }
+        .greetings-section .greeting {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .greetings-section .greeting img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .greetings-section .greeting p {
+            margin: 0;
+        }
+        .greetings-section .greeting .name {
+            font-weight: 600;
+        }
+        .greetings-section .greeting .message {
+            font-size: 14px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="sidebar">
+   <div>
+    <img alt="Niqah logo" height="50" src="https://storage.googleapis.com/a1aa/image/geHxUwUepYpunkJDwLM3RIY0WUzKOCeqrfRPkbtbaezgv7bfE.jpg" width="50"/>
+    <a href="#">
+     <i class="fas fa-tachometer-alt">
+     </i>
+     Dashboard
+    </a>
+    <a href="#">
+     <i class="fas fa-globe">
+     </i>
+     Undangan Web
+    </a>
+    <a href="#">
+     <i class="fas fa-print">
+     </i>
+     Undangan Cetak
+    </a>
+    <a href="#">
+     <i class="fas fa-filter">
+     </i>
+     Filter Instagram
+    </a>
+    <a href="#">
+     <i class="fas fa-credit-card">
+     </i>
+     Payment
+    </a>
+    <a href="#">
+     <i class="fas fa-cog">
+     </i>
+     Settings
+    </a>
+   </div>
+   <a class="sign-out" href="#">
+    <i class="fas fa-sign-out-alt">
+    </i>
+    Sign out
+   </a>
+  </div>
+  <div class="main-content">
+   <div class="header">
+    <h1>
+     Hi Andrei, Welcome to Niqah!
+    </h1>
+    <div class="package-info">
+     <p>
+      Nama Paket
+     </p>
+     <p>
+      Aktif s/d 7 Sept 2024
+     </p>
+     <a href="#">
+      Upgrade Paket
+     </a>
+    </div>
+   </div>
+   <div class="stats">
+    <div class="stat">
+     <h2>
+      202
+     </h2>
+     <p>
+      Datang
+     </p>
+    </div>
+    <div class="stat">
+     <h2>
+      202
+     </h2>
+     <p>
+      Tidak Datang
+     </p>
+    </div>
+    <div class="stat">
+     <h2>
+      202
+     </h2>
+     <p>
+      Belum Konfirmasi
+     </p>
+    </div>
+    <div class="stat" style="background-color: #5A2D0C; color: white;">
+     <h2>
+      202
+     </h2>
+     <p>
+      Total RSVP
+     </p>
+    </div>
+   </div>
+   <div class="guest-list">
+    <div class="actions">
+     <h2>
+      Daftar Tamu
+     </h2>
+     <div>
+      <button>
+       <i class="fas fa-plus">
+       </i>
+       Tambah
+      </button>
+      <button>
+       <i class="fab fa-whatsapp">
+       </i>
+       Kirim Whatsapp
+      </button>
+     </div>
+    </div>
+    <table>
+     <thead>
+      <tr>
+       <th>
+        <input type="checkbox"/>
+       </th>
+       <th>
+        Nama
+       </th>
+       <th>
+        Kode
+       </th>
+       <th>
+        Whatsapp
+       </th>
+       <th>
+        Kategori
+       </th>
+       <th>
+        Status
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        <input type="checkbox"/>
+       </td>
+       <td>
+        Andrew Bojangles
+       </td>
+       <td>
+        2354
+       </td>
+       <td>
+        +628123456789
+       </td>
+       <td>
+        Regular
+       </td>
+       <td>
+        Invited
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <input type="checkbox"/>
+       </td>
+       <td>
+        Andrew Bojangles
+       </td>
+       <td>
+        2354
+       </td>
+       <td>
+        +628123456789
+       </td>
+       <td>
+        Regular
+       </td>
+       <td>
+        Invited
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <input type="checkbox"/>
+       </td>
+       <td>
+        Andrew Bojangles
+       </td>
+       <td>
+        2354
+       </td>
+       <td>
+        +628123456789
+       </td>
+       <td>
+        Regular
+       </td>
+       <td>
+        Invited
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <input type="checkbox"/>
+       </td>
+       <td>
+        Andrew Bojangles
+       </td>
+       <td>
+        2354
+       </td>
+       <td>
+        +628123456789
+       </td>
+       <td>
+        Regular
+       </td>
+       <td>
+        Invited
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <input type="checkbox"/>
+       </td>
+       <td>
+        Andrew Bojangles
+       </td>
+       <td>
+        2354
+       </td>
+       <td>
+        +628123456789
+       </td>
+       <td>
+        Regular
+       </td>
+       <td>
+        Invited
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <input type="checkbox"/>
+       </td>
+       <td>
+        Andrew Bojangles
+       </td>
+       <td>
+        2354
+       </td>
+       <td>
+        +628123456789
+       </td>
+       <td>
+        Regular
+       </td>
+       <td>
+        Invited
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <input type="checkbox"/>
+       </td>
+       <td>
+        Andrew Bojangles
+       </td>
+       <td>
+        2354
+       </td>
+       <td>
+        +628123456789
+       </td>
+       <td>
+        Regular
+       </td>
+       <td>
+        Invited
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <input type="checkbox"/>
+       </td>
+       <td>
+        Andrew Bojangles
+       </td>
+       <td>
+        2354
+       </td>
+       <td>
+        +628123456789
+       </td>
+       <td>
+        Regular
+       </td>
+       <td>
+        Invited
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+   <div class="greetings-section">
+    <h2>
+     Greetings Section
+    </h2>
+    <div class="greeting">
+     <img alt="User profile picture" height="50" src="https://storage.googleapis.com/a1aa/image/ifOQ9Vb5lg1KU6ZoC82QmAzdzKE0WNgiiBMHye6bkeq37etPB.jpg" width="50"/>
+     <div>
+      <p class="name">
+       amyrobson
+      </p>
+      <p class="message">
+       Impressed! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+      </p>
+     </div>
+    </div>
+    <div class="greeting">
+     <img alt="User profile picture" height="50" src="https://storage.googleapis.com/a1aa/image/ifOQ9Vb5lg1KU6ZoC82QmAzdzKE0WNgiiBMHye6bkeq37etPB.jpg" width="50"/>
+     <div>
+      <p class="name">
+       amyrobson
+      </p>
+      <p class="message">
+       Impressed! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+      </p>
+     </div>
+    </div>
+    <div class="greeting">
+     <img alt="User profile picture" height="50" src="https://storage.googleapis.com/a1aa/image/ifOQ9Vb5lg1KU6ZoC82QmAzdzKE0WNgiiBMHye6bkeq37etPB.jpg" width="50"/>
+     <div>
+      <p class="name">
+       amyrobson
+      </p>
+      <p class="message">
+       Impressed! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+      </p>
+     </div>
+    </div>
+    <div class="greeting">
+     <img alt="User profile picture" height="50" src="https://storage.googleapis.com/a1aa/image/ifOQ9Vb5lg1KU6ZoC82QmAzdzKE0WNgiiBMHye6bkeq37etPB.jpg" width="50"/>
+     <div>
+      <p class="name">
+       amyrobson
+      </p>
+      <p class="message">
+       Impressed! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
