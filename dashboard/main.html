@@ -1,512 +1,439 @@
-<html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Niqah Dashboard
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-  <style>
-   body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .sidebar {
-            background-color: #5A2D0C;
-            color: white;
-            width: 250px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .sidebar img {
-            width: 50px;
-            margin-bottom: 20px;
-        }
-        .sidebar a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .sidebar a i {
-            margin-right: 10px;
-        }
-        .sidebar .sign-out {
-            display: flex;
-            align-items: center;
-        }
-        .main-content {
-            flex: 1;
-            background-color: #F5F5F5;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .header h1 {
-            font-size: 24px;
-            font-weight: 700;
-        }
-        .header .package-info {
-            text-align: right;
-        }
-        .header .package-info p {
-            margin: 0;
-        }
-        .header .package-info a {
-            color: #D2691E;
-            text-decoration: none;
-        }
-        .stats {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .stats .stat {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            flex: 1;
-            margin-right: 10px;
-        }
-        .stats .stat:last-child {
-            margin-right: 0;
-        }
-        .stats .stat h2 {
-            font-size: 36px;
-            margin: 0;
-        }
-        .stats .stat p {
-            margin: 0;
-            font-weight: 600;
-        }
-        .guest-list {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        .guest-list h2 {
-            margin: 0 0 20px 0;
-        }
-        .guest-list table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .guest-list table th, .guest-list table td {
-            padding: 10px;
-            text-align: left;
-        }
-        .guest-list table th {
-            background-color: #F5F5F5;
-        }
-        .guest-list table tr:nth-child(even) {
-            background-color: #F5F5F5;
-        }
-        .guest-list .actions {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .guest-list .actions button {
-            background-color: #5A2D0C;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .guest-list .actions button i {
-            margin-right: 10px;
-        }
-        .greetings-section {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .greetings-section h2 {
-            margin: 0 0 20px 0;
-        }
-        .greetings-section .greeting {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .greetings-section .greeting img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-        .greetings-section .greeting p {
-            margin: 0;
-        }
-        .greetings-section .greeting .name {
-            font-weight: 600;
-        }
-        .greetings-section .greeting .message {
-            font-size: 14px;
-        }
-  </style>
- </head>
- <body>
-  <div class="sidebar">
-   <div>
-    <img alt="Niqah logo" height="50" src="https://storage.googleapis.com/a1aa/image/geHxUwUepYpunkJDwLM3RIY0WUzKOCeqrfRPkbtbaezgv7bfE.jpg" width="50"/>
-    <a href="#">
-     <i class="fas fa-tachometer-alt">
-     </i>
-     Dashboard
-    </a>
-    <a href="#">
-     <i class="fas fa-globe">
-     </i>
-     Undangan Web
-    </a>
-    <a href="#">
-     <i class="fas fa-print">
-     </i>
-     Undangan Cetak
-    </a>
-    <a href="#">
-     <i class="fas fa-filter">
-     </i>
-     Filter Instagram
-    </a>
-    <a href="#">
-     <i class="fas fa-credit-card">
-     </i>
-     Payment
-    </a>
-    <a href="#">
-     <i class="fas fa-cog">
-     </i>
-     Settings
-    </a>
-   </div>
-   <a class="sign-out" href="#">
-    <i class="fas fa-sign-out-alt">
-    </i>
-    Sign out
-   </a>
-  </div>
-  <div class="main-content">
-   <div class="header">
-    <h1>
-     Hi Andrei, Welcome to Niqah!
-    </h1>
-    <div class="package-info">
-     <p>
-      Nama Paket
-     </p>
-     <p>
-      Aktif s/d 7 Sept 2024
-     </p>
-     <a href="#">
-      Upgrade Paket
-     </a>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Galileo Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#f8f5f1] group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0e9e0] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#1b150e]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-[#1b150e] text-lg font-bold leading-tight tracking-[-0.015em]">Niqah</h2>
+          </div>
+          <button
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#c28739] text-[#1b150e] text-sm font-bold leading-normal tracking-[0.015em]"
+          >
+            <span class="truncate">Upgrade Paket</span>
+          </button>
+        </header>
+        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-80">
+            <div class="flex h-full min-h-[700px] flex-col justify-between bg-[#f8f5f1] p-4">
+              <div class="flex flex-col gap-4">
+                <div class="flex gap-3">
+                  <div
+                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/553693a3-3107-4d83-933e-130f3c750d90.png");'
+                  ></div>
+                  <h1 class="text-[#1b150e] text-base font-medium leading-normal">Niqah</h1>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center gap-3 px-3 py-2 rounded-xl bg-[#f0e9e0]">
+                    <div class="text-[#1b150e]" data-icon="Gauge" data-size="24px" data-weight="fill">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M240,160v24a16,16,0,0,1-16,16H115.93a4,4,0,0,1-3.24-6.35L174.27,109a8.21,8.21,0,0,0-1.37-11.3,8,8,0,0,0-11.37,1.61l-72,99.06A4,4,0,0,1,86.25,200H32a16,16,0,0,1-16-16V161.13c0-1.79,0-3.57.13-5.33a4,4,0,0,1,4-3.8H48a8,8,0,0,0,8-8.53A8.17,8.17,0,0,0,47.73,136H23.92a4,4,0,0,1-3.87-5c12-43.84,49.66-77.13,95.52-82.28a4,4,0,0,1,4.43,4V80a8,8,0,0,0,8.53,8A8.17,8.17,0,0,0,136,79.73V52.67a4,4,0,0,1,4.43-4A112.18,112.18,0,0,1,236.23,131a4,4,0,0,1-3.88,5H208.27a8.17,8.17,0,0,0-8.25,7.47,8,8,0,0,0,8,8.53h27.92a4,4,0,0,1,4,3.86C240,157.23,240,158.61,240,160Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#1b150e] text-sm font-medium leading-normal">Dashboard</p>
+                  </div>
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#1b150e]" data-icon="GoogleChromeLogo" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,16a88,88,0,0,1,73.72,40H128a48.08,48.08,0,0,0-45.6,33l-23.08-40A87.89,87.89,0,0,1,128,40Zm32,88a32,32,0,1,1-32-32A32,32,0,0,1,160,128ZM40,128a87.44,87.44,0,0,1,9.56-39.86L86.43,152c.06.1.13.19.19.28A48,48,0,0,0,137.82,175l-23.1,40A88.14,88.14,0,0,1,40,128Zm92.69,87.87L169.57,152c.08-.14.14-.28.22-.42a47.88,47.88,0,0,0-6-55.58H210a88,88,0,0,1-77.29,119.87Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#1b150e] text-sm font-medium leading-normal">Undangan Web</p>
+                  </div>
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#1b150e]" data-icon="FileSvg" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M87.82,196.31a20.82,20.82,0,0,1-9.19,15.23C73.44,215,67,216,61.14,216A61.23,61.23,0,0,1,46,214a8,8,0,0,1,4.3-15.41c4.38,1.2,14.95,2.7,19.55-.36.88-.59,1.83-1.52,2.14-3.93.35-2.67-.71-4.1-12.78-7.59-9.35-2.7-25-7.23-23-23.11a20.55,20.55,0,0,1,9-14.95c11.84-8,30.72-3.31,32.83-2.76a8,8,0,0,1-4.07,15.48c-4.48-1.17-15.23-2.56-19.83.56a4.54,4.54,0,0,0-2,3.67c-.11.9-.14,1.09,1.12,1.9,2.31,1.49,6.44,2.68,10.45,3.84C73.5,174.17,90.06,179,87.82,196.31ZM216,88v24a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v72a8,8,0,1,1-16,0V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.65,2.34l56,56A8,8,0,0,1,216,88Zm-56-8h28.69L160,51.31Zm-13.3,64.47a8,8,0,0,0-10.23,4.84L124,184.21l-12.47-34.9a8,8,0,1,0-15.06,5.38l20,56a8,8,0,0,0,15.07,0l20-56A8,8,0,0,0,146.7,144.47ZM208,176h-8a8,8,0,0,0,0,16v5.29a13.38,13.38,0,0,1-8,2.71c-8.82,0-16-9-16-20s7.18-20,16-20a13.27,13.27,0,0,1,7.53,2.38,8,8,0,0,0,8.95-13.26A29.38,29.38,0,0,0,192,144c-17.64,0-32,16.15-32,36s14.36,36,32,36a30.06,30.06,0,0,0,21.78-9.6,8,8,0,0,0,2.22-5.53V184A8,8,0,0,0,208,176Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#1b150e] text-sm font-medium leading-normal">Undangan Cetak</p>
+                  </div>
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#1b150e]" data-icon="CheckCircle" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#1b150e] text-sm font-medium leading-normal">Filter Instagram</p>
+                  </div>
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#1b150e]" data-icon="SquareLogo" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM160,88H96a8,8,0,0,0-8,8v64a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V96A8,8,0,0,0,160,88Zm-8,64H104V104h48Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#1b150e] text-sm font-medium leading-normal">Payment</p>
+                  </div>
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#1b150e]" data-icon="ToggleRight" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M176,56H80a72,72,0,0,0,0,144h96a72,72,0,0,0,0-144Zm0,128H80A56,56,0,0,1,80,72h96a56,56,0,0,1,0,112Zm0-96a40,40,0,1,0,40,40A40,40,0,0,0,176,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,176,152Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#1b150e] text-sm font-medium leading-normal">Settings</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center gap-3 px-3 py-2">
+                  <div class="text-[#1b150e]" data-icon="SignOut" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M112,216a8,8,0,0,1-8,8H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h56a8,8,0,0,1,0,16H48V208h56A8,8,0,0,1,112,216Zm109.66-93.66-40-40a8,8,0,0,0-11.32,11.32L196.69,120H104a8,8,0,0,0,0,16h92.69l-26.35,26.34a8,8,0,0,0,11.32,11.32l40-40A8,8,0,0,0,221.66,122.34Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <p class="text-[#1b150e] text-sm font-medium leading-normal">Sign out</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <div class="flex min-w-72 flex-col gap-3">
+                <p class="text-[#1b150e] text-4xl font-black leading-tight tracking-[-0.033em]">Welcome to Niqah!</p>
+                <p class="text-[#95754b] text-base font-normal leading-normal">Hi Andrei.</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#e5dacc] bg-[#f8f5f1] p-4 items-center">
+                <h2 class="text-[#1b150e] text-base font-bold leading-tight">Datang</h2>
+              </div>
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#e5dacc] bg-[#f8f5f1] p-4 items-center">
+                <h2 class="text-[#1b150e] text-base font-bold leading-tight">Tidak Datang</h2>
+              </div>
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#e5dacc] bg-[#f8f5f1] p-4 items-center">
+                <h2 class="text-[#1b150e] text-base font-bold leading-tight">Belum Konfirmasi</h2>
+              </div>
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#e5dacc] bg-[#f8f5f1] p-4 items-center">
+                <h2 class="text-[#1b150e] text-base font-bold leading-tight">Total RSVP</h2>
+              </div>
+            </div>
+            <div class="px-4 py-3 @container">
+              <div class="flex overflow-hidden rounded-xl border border-[#e5dacc] bg-[#f8f5f1]">
+                <table class="flex-1">
+                  <thead>
+                    <tr class="bg-[#f8f5f1]">
+                      <th class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-120 px-4 py-3 text-left text-[#1b150e] w-[400px] text-sm font-medium leading-normal">Nama</th>
+                      <th class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-240 px-4 py-3 text-left text-[#1b150e] w-[400px] text-sm font-medium leading-normal">Kode</th>
+                      <th class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-360 px-4 py-3 text-left text-[#1b150e] w-[400px] text-sm font-medium leading-normal">
+                        Whatsapp
+                      </th>
+                      <th class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-480 px-4 py-3 text-left text-[#1b150e] w-60 text-sm font-medium leading-normal">Kategori</th>
+                      <th class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-600 px-4 py-3 text-left text-[#1b150e] w-60 text-[#95754b] text-sm font-medium leading-normal">
+                        Status
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-t border-t-[#e5dacc]">
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-120 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        Andrew Bojangles
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-240 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">255K</td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-360 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        +628123456789
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-480 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#f0e9e0] text-[#1b150e] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Regular</span>
+                        </button>
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-600 h-[72px] px-4 py-2 w-60 text-[#95754b] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Invited
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#e5dacc]">
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-120 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        Andrew Bojangles
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-240 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">255K</td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-360 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        +628123456789
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-480 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#f0e9e0] text-[#1b150e] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Regular</span>
+                        </button>
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-600 h-[72px] px-4 py-2 w-60 text-[#95754b] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Invited
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#e5dacc]">
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-120 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        Andrew Bojangles
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-240 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">255K</td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-360 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        +628123456789
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-480 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#f0e9e0] text-[#1b150e] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Regular</span>
+                        </button>
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-600 h-[72px] px-4 py-2 w-60 text-[#95754b] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Invited
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#e5dacc]">
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-120 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        Andrew Bojangles
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-240 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">255K</td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-360 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        +628123456789
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-480 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#f0e9e0] text-[#1b150e] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Regular</span>
+                        </button>
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-600 h-[72px] px-4 py-2 w-60 text-[#95754b] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Invited
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#e5dacc]">
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-120 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        Andrew Bojangles
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-240 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">255K</td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-360 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        +628123456789
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-480 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#f0e9e0] text-[#1b150e] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Regular</span>
+                        </button>
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-600 h-[72px] px-4 py-2 w-60 text-[#95754b] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Invited
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#e5dacc]">
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-120 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        Andrew Bojangles
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-240 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">255K</td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-360 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        +628123456789
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-480 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#f0e9e0] text-[#1b150e] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Regular</span>
+                        </button>
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-600 h-[72px] px-4 py-2 w-60 text-[#95754b] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Invited
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#e5dacc]">
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-120 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        Andrew Bojangles
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-240 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">255K</td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-360 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        +628123456789
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-480 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#f0e9e0] text-[#1b150e] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Regular</span>
+                        </button>
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-600 h-[72px] px-4 py-2 w-60 text-[#95754b] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Invited
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#e5dacc]">
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-120 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        Andrew Bojangles
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-240 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">255K</td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-360 h-[72px] px-4 py-2 w-[400px] text-[#1b150e] text-sm font-normal leading-normal">
+                        +628123456789
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-480 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#f0e9e0] text-[#1b150e] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Regular</span>
+                        </button>
+                      </td>
+                      <td class="table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-600 h-[72px] px-4 py-2 w-60 text-[#95754b] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Invited
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <style>
+                          @container(max-width:120px){.table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-120{display: none;}}
+                @container(max-width:240px){.table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-240{display: none;}}
+                @container(max-width:360px){.table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-360{display: none;}}
+                @container(max-width:480px){.table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-480{display: none;}}
+                @container(max-width:600px){.table-97178c26-7c70-47c0-b8f7-c9eaad2d9421-column-600{display: none;}}
+              </style>
+            </div>
+          </div>
+          <div class="layout-content-container flex flex-col">
+            <h2 class="text-[#1b150e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Greetings Section</h2>
+            <div class="flex w-full flex-row items-start justify-start gap-3 p-4">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 shrink-0"
+                style='background-image: url("https://cdn.usegalileo.ai/sdxl10/82ea44af-0dfe-461d-9567-7af600b76691.png");'
+              ></div>
+              <div class="flex h-full flex-1 flex-col items-start justify-start">
+                <div class="flex w-full flex-row items-start justify-start gap-x-3">
+                  <p class="text-[#1b150e] text-sm font-bold leading-normal tracking-[0.015em]">amyrobson</p>
+                  <p class="text-[#95754b] text-sm font-normal leading-normal">2 hours ago</p>
+                </div>
+                <p class="text-[#1b150e] text-sm font-normal leading-normal">Impressed! Thought it covers the RSVP features excellently.</p>
+                <div class="flex w-full flex-row items-center justify-start gap-9 pt-2">
+                  <div class="flex items-center gap-2">
+                    <div class="text-[#95754b]" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#95754b] text-sm font-normal leading-normal">10</p>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="text-[#95754b]" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex w-full flex-row items-start justify-start gap-3 p-4">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 shrink-0"
+                style='background-image: url("https://cdn.usegalileo.ai/sdxl10/928fb43e-3b2b-4497-8c11-6538ff0b316c.png");'
+              ></div>
+              <div class="flex h-full flex-1 flex-col items-start justify-start">
+                <div class="flex w-full flex-row items-start justify-start gap-x-3">
+                  <p class="text-[#1b150e] text-sm font-bold leading-normal tracking-[0.015em]">amyrobson</p>
+                  <p class="text-[#95754b] text-sm font-normal leading-normal">3 hours ago</p>
+                </div>
+                <p class="text-[#1b150e] text-sm font-normal leading-normal">Great layout! Easy to manage guests.</p>
+                <div class="flex w-full flex-row items-center justify-start gap-9 pt-2">
+                  <div class="flex items-center gap-2">
+                    <div class="text-[#95754b]" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#95754b] text-sm font-normal leading-normal">8</p>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="text-[#95754b]" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#95754b] text-sm font-normal leading-normal">1</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex w-full flex-row items-start justify-start gap-3 p-4">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 shrink-0"
+                style='background-image: url("https://cdn.usegalileo.ai/sdxl10/81410f21-2750-4c1e-9260-036a7e6bf75c.png");'
+              ></div>
+              <div class="flex h-full flex-1 flex-col items-start justify-start">
+                <div class="flex w-full flex-row items-start justify-start gap-x-3">
+                  <p class="text-[#1b150e] text-sm font-bold leading-normal tracking-[0.015em]">amyrobson</p>
+                  <p class="text-[#95754b] text-sm font-normal leading-normal">4 hours ago</p>
+                </div>
+                <p class="text-[#1b150e] text-sm font-normal leading-normal">Loved the color palette and typography.</p>
+                <div class="flex w-full flex-row items-center justify-start gap-9 pt-2">
+                  <div class="flex items-center gap-2">
+                    <div class="text-[#95754b]" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#95754b] text-sm font-normal leading-normal">15</p>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="text-[#95754b]" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-   </div>
-   <div class="stats">
-    <div class="stat">
-     <h2>
-      202
-     </h2>
-     <p>
-      Datang
-     </p>
-    </div>
-    <div class="stat">
-     <h2>
-      202
-     </h2>
-     <p>
-      Tidak Datang
-     </p>
-    </div>
-    <div class="stat">
-     <h2>
-      202
-     </h2>
-     <p>
-      Belum Konfirmasi
-     </p>
-    </div>
-    <div class="stat" style="background-color: #5A2D0C; color: white;">
-     <h2>
-      202
-     </h2>
-     <p>
-      Total RSVP
-     </p>
-    </div>
-   </div>
-   <div class="guest-list">
-    <div class="actions">
-     <h2>
-      Daftar Tamu
-     </h2>
-     <div>
-      <button>
-       <i class="fas fa-plus">
-       </i>
-       Tambah
-      </button>
-      <button>
-       <i class="fab fa-whatsapp">
-       </i>
-       Kirim Whatsapp
-      </button>
-     </div>
-    </div>
-    <table>
-     <thead>
-      <tr>
-       <th>
-        <input type="checkbox"/>
-       </th>
-       <th>
-        Nama
-       </th>
-       <th>
-        Kode
-       </th>
-       <th>
-        Whatsapp
-       </th>
-       <th>
-        Kategori
-       </th>
-       <th>
-        Status
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        <input type="checkbox"/>
-       </td>
-       <td>
-        Andrew Bojangles
-       </td>
-       <td>
-        2354
-       </td>
-       <td>
-        +628123456789
-       </td>
-       <td>
-        Regular
-       </td>
-       <td>
-        Invited
-       </td>
-      </tr>
-      <tr>
-       <td>
-        <input type="checkbox"/>
-       </td>
-       <td>
-        Andrew Bojangles
-       </td>
-       <td>
-        2354
-       </td>
-       <td>
-        +628123456789
-       </td>
-       <td>
-        Regular
-       </td>
-       <td>
-        Invited
-       </td>
-      </tr>
-      <tr>
-       <td>
-        <input type="checkbox"/>
-       </td>
-       <td>
-        Andrew Bojangles
-       </td>
-       <td>
-        2354
-       </td>
-       <td>
-        +628123456789
-       </td>
-       <td>
-        Regular
-       </td>
-       <td>
-        Invited
-       </td>
-      </tr>
-      <tr>
-       <td>
-        <input type="checkbox"/>
-       </td>
-       <td>
-        Andrew Bojangles
-       </td>
-       <td>
-        2354
-       </td>
-       <td>
-        +628123456789
-       </td>
-       <td>
-        Regular
-       </td>
-       <td>
-        Invited
-       </td>
-      </tr>
-      <tr>
-       <td>
-        <input type="checkbox"/>
-       </td>
-       <td>
-        Andrew Bojangles
-       </td>
-       <td>
-        2354
-       </td>
-       <td>
-        +628123456789
-       </td>
-       <td>
-        Regular
-       </td>
-       <td>
-        Invited
-       </td>
-      </tr>
-      <tr>
-       <td>
-        <input type="checkbox"/>
-       </td>
-       <td>
-        Andrew Bojangles
-       </td>
-       <td>
-        2354
-       </td>
-       <td>
-        +628123456789
-       </td>
-       <td>
-        Regular
-       </td>
-       <td>
-        Invited
-       </td>
-      </tr>
-      <tr>
-       <td>
-        <input type="checkbox"/>
-       </td>
-       <td>
-        Andrew Bojangles
-       </td>
-       <td>
-        2354
-       </td>
-       <td>
-        +628123456789
-       </td>
-       <td>
-        Regular
-       </td>
-       <td>
-        Invited
-       </td>
-      </tr>
-      <tr>
-       <td>
-        <input type="checkbox"/>
-       </td>
-       <td>
-        Andrew Bojangles
-       </td>
-       <td>
-        2354
-       </td>
-       <td>
-        +628123456789
-       </td>
-       <td>
-        Regular
-       </td>
-       <td>
-        Invited
-       </td>
-      </tr>
-     </tbody>
-    </table>
-   </div>
-   <div class="greetings-section">
-    <h2>
-     Greetings Section
-    </h2>
-    <div class="greeting">
-     <img alt="User profile picture" height="50" src="https://storage.googleapis.com/a1aa/image/ifOQ9Vb5lg1KU6ZoC82QmAzdzKE0WNgiiBMHye6bkeq37etPB.jpg" width="50"/>
-     <div>
-      <p class="name">
-       amyrobson
-      </p>
-      <p class="message">
-       Impressed! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
-      </p>
-     </div>
-    </div>
-    <div class="greeting">
-     <img alt="User profile picture" height="50" src="https://storage.googleapis.com/a1aa/image/ifOQ9Vb5lg1KU6ZoC82QmAzdzKE0WNgiiBMHye6bkeq37etPB.jpg" width="50"/>
-     <div>
-      <p class="name">
-       amyrobson
-      </p>
-      <p class="message">
-       Impressed! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
-      </p>
-     </div>
-    </div>
-    <div class="greeting">
-     <img alt="User profile picture" height="50" src="https://storage.googleapis.com/a1aa/image/ifOQ9Vb5lg1KU6ZoC82QmAzdzKE0WNgiiBMHye6bkeq37etPB.jpg" width="50"/>
-     <div>
-      <p class="name">
-       amyrobson
-      </p>
-      <p class="message">
-       Impressed! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
-      </p>
-     </div>
-    </div>
-    <div class="greeting">
-     <img alt="User profile picture" height="50" src="https://storage.googleapis.com/a1aa/image/ifOQ9Vb5lg1KU6ZoC82QmAzdzKE0WNgiiBMHye6bkeq37etPB.jpg" width="50"/>
-     <div>
-      <p class="name">
-       amyrobson
-      </p>
-      <p class="message">
-       Impressed! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
-      </p>
-     </div>
-    </div>
-   </div>
-  </div>
- </body>
+  </body>
 </html>
