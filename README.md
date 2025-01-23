@@ -4,7 +4,7 @@
 Proyek aplikasi web pemjualan undangan pernikahan digital. Aplikasi ini mencakup frontend (Next.js) dan backend (Node.js dengan Express).
 
 ## Struktur Proyek
-```
+
 InvitationWebsiteProject/
 ├── frontend/         # Aplikasi frontend (Next.js)
 │   ├── pages/        # Halaman website (Landing Page, Login, Dashboard, dll.)
@@ -21,7 +21,7 @@ InvitationWebsiteProject/
 │   └── .env.example  # Contoh variabel lingkungan
 ├── scripts/          # Skrip utilitas
 └── README.md         # Dokumentasi proyek
-
+```
 ## Persyaratan
 - Node.js (>= 16.x)
 - MongoDB (sebagai database)
