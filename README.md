@@ -1,8 +1,6 @@
-```markdown
 # Invitation Website Project
-
 Proyek aplikasi web pemjualan undangan pernikahan digital. Aplikasi ini mencakup frontend (Next.js) dan backend (Node.js dengan Express).
-
+```
 ## Struktur Proyek
 
 InvitationWebsiteProject/
